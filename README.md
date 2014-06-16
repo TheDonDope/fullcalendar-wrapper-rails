@@ -22,15 +22,15 @@ Or install it yourself as:
 
 1. In your `app/assets/javascripts/application.js` include the following line:
 
-    `//= require fullcalendar`
+    //= require fullcalendar`
 	
 If you require a localized version of the calendar, please also include this line:
 
-	`//= require lang-all`
+    //= require lang-all`
 
 2. In your `app/assets/javascripts/application.css` you can include this line:
     
-    `*=require fullcalendar`
+    *=require fullcalendar
 
 However, if you use SASS i advise you to create a specific `fullcalendar_and_overrides.css.scss` file
 and include the `fullcalendar.css` via an Import statement:
