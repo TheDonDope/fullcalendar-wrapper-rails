@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Fullcalendar::Wrapper::Rails::VERSION
   spec.authors       = ["Christian Dobert"]
   spec.email         = ["chr.dobert@gmail.com"]
-  spec.summary       = ["A simple wrapper for the fullcalendar jQuery Plugin"]
-  spec.description   = ["A wrapper around the great fullcalendar jQuery Plugin (see: http://arshaw.com/fullcalendar)"]
-  spec.homepage      = ""
+  spec.summary       = %q{A simple wrapper for the fullcalendar jQuery Plugin"}
+  spec.description   = %q{A wrapper around the great fullcalendar jQuery Plugin (see: http://arshaw.com/fullcalendar)"}
+  spec.homepage      = "https://github.com/dondope/fullcalendar-wrapper-rails"
   spec.license       = "MIT"
 
   spec.files         = Dir["{lib,vendor}/**/*"]
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "momentjs-rails", '~> 2.6.0'
 end
