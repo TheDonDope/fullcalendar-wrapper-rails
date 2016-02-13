@@ -1,7 +1,7 @@
 module Fullcalendar
   module Wrapper
     module Rails
-      VERSION = "2.1.1"
+      VERSION = "2.6.0"
     end
   end
 end
