@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Fullcalendar-wrapper-rails by TheDonDope</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Fullcalendar-wrapper-rails</h1>
+      <h2 class="project-tagline">A simple wrapper around the Fullcalender plugin</h2>
+      <a href="https://github.com/TheDonDope/fullcalendar-wrapper-rails" class="btn">View on GitHub</a>
+      <a href="https://github.com/TheDonDope/fullcalendar-wrapper-rails/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/TheDonDope/fullcalendar-wrapper-rails/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="fullcalendarwrapperrails" class="anchor" href="#fullcalendarwrapperrails" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fullcalendar::Wrapper::Rails</h1>
+
+<p>This gem is a simple wrapper around the fullcalendar plugin.
+It is bundled as a gem to be able to include this 3rd party asset into the asset pipeline, without having to locally import the actual CSS and JavaScript into your project.
+Please see <a href="http://arshaw.com/fullcalendar/">http://arshaw.com/fullcalendar/</a> for the original plugin.</p>
+
+<h1>
+<a id="" class="anchor" href="#" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://badge.fury.io/rb/fullcalendar-wrapper-rails"><img src="https://badge.fury.io/rb/fullcalendar-wrapper-rails.svg" alt="Gem Version"></a>
+</h1>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'fullcalendar-wrapper-rails'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install fullcalendar-wrapper-rails
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<ol>
+<li>
+<p>In your <code>app/assets/javascripts/application.js</code> include the following line:</p>
+
+<p><code>//= require fullcalendar</code></p>
+</li>
+</ol>
+
+<p>If you require a localized version of the calendar, please also include this line:</p>
+
+<pre><code>`//= require lang-all`
+</code></pre>
+
+<ol>
+<li>
+<p>In your <code>app/assets/javascripts/application.css</code> you can include this line:</p>
+
+<p><code>*=require fullcalendar</code></p>
+</li>
+</ol>
+
+<p>However, if you use SASS i advise you to create a specific <code>fullcalendar_and_overrides.css.scss</code> file
+and include the <code>fullcalendar.css</code> via an Import statement:</p>
+
+<pre><code>@Import 'fullcalendar';
+</code></pre>
+
+<p>A sample HTML markup is quite easy and may look like this:</p>
+
+<pre><code>&lt;div id='calendar'&gt;&lt;/div&gt;
+</code></pre>
+
+<p>At last you need to have an JavaScript file to call the actual <code>fullcalendar</code> method.
+Since the calendar is somewhat configurable, i like to have an JavaScript file, corresponding to the CSS file, something like <code>app/assets/javascripts/fullcalendar_and_overrides.js</code>.</p>
+
+<p>Here is a simple sample for this:</p>
+
+<pre><code>$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+        header: {
+            left: 'prev,next prevYear,nextYear today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        lang: 'de',
+        defaultView :'month',
+        weekends: false,
+        weekMode: 'liquid',
+        height: 700,
+        selectable: true,
+        minTime : "07:00:00",
+        maxTime: "21:00:00",
+        allDaySlot: false,
+        slotDuration: '00:15:00',
+        weekNumbers: true
+        }
+    });
+});
+</code></pre>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it ( <a href="https://github.com/%5Bmy-github-username%5D/fullcalendar-wrapper-rails/fork">https://github.com/[my-github-username]/fullcalendar-wrapper-rails/fork</a> )</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/TheDonDope/fullcalendar-wrapper-rails">Fullcalendar-wrapper-rails</a> is maintained by <a href="https://github.com/TheDonDope">TheDonDope</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
